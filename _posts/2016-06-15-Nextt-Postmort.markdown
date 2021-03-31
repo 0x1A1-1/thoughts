@@ -2,7 +2,7 @@
 layout: post
 title:  "Reflection on Nextt’s postmortem"
 date:   2016-6-15 08:50:27 +0100
-categories: Thoughts
+categories: startup
 ---
 > “Starting a company is like throwing yourself off a cliff and assembling an airplane on the way down.”
 

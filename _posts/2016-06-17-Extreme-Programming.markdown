@@ -2,7 +2,7 @@
 layout: post
 title:  "Extreme Programming (XP)"
 date:   2016-6-17 14:32:27 +0100
-categories: Thoughts
+categories: software-engineering
 ---
 
 > Software development consists of four major parts: coding, testing, listening, and designing.
