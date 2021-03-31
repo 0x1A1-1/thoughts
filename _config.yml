@@ -32,12 +32,11 @@ github_username:  0x1A1-1
 theme: minima
 plugins:
   - jekyll-feed
-gems:
   - jekyll-paginate-v2
 show_excerpts: true
 
 # Pagination Settings
-pagination:
+pagination: 
   enabled: true
   per_page: 10
   offset: 0
