@@ -23,7 +23,7 @@ author: Xiao He
 email: hello@xiaojunhe.com
 description: >- # this means to ignore newlines until "baseurl:"
   Ledger of Xiao's continuous thoughts for the future AI replica.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/thoughts" # the subpath of your site, e.g. /blog
 url: "https://xiaojunhe.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: _0xIAO
 github_username:  0x1A1-1 
