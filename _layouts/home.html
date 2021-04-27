@@ -23,7 +23,7 @@ layout: default
           </a>
         </h3>
         {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          {{ post.excerpt | remove: "Introduction"}}
         {%- endif -%}
       </li>
       {%- endif -%}
