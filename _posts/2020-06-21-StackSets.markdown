@@ -64,7 +64,7 @@ We can now push out the StackSets to all of our target accounts
 
 For our example, we will run the following:
 ```
-~ ❯ aws cloudformation create-stack-instances --stack-set-name IAM-StackSets --accounts 571626811355 --regions us-east-1 --operation-preferences FailureToleranceCount=1 --region us-east-1
+~ ❯ aws cloudformation create-stack-instances --stack-set-name IAM-StackSets --accounts TARGET_ACCOUNT_NUMBER --regions us-east-1 --operation-preferences FailureToleranceCount=1 --region us-east-1
 ```
 Which would send OperationId in response body that looks like:
 ```json
