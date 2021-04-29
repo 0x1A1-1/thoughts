@@ -38,6 +38,9 @@ gems:
   - jekyll-paginate-v2
 show_excerpts: true
 
+disqus:
+    shortname: 0xia0-hex-thoughts
+
 # Pagination Settings
 pagination:
   enabled: true

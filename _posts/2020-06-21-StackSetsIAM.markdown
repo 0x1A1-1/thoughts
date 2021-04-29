@@ -4,6 +4,7 @@ title:  "DDD Your Multi-Account Environments with StackSets"
 date:   2020-06-21 08:50:27 +0100
 archive: true
 permalink: archive/CloudFormationIAM
+comments: false
 ---
 ```json
 {
