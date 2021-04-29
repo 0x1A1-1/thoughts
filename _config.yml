@@ -28,6 +28,8 @@ url: "https://xiaojunhe.com" # the base hostname & protocol for your site, e.g. 
 twitter_username: _0xIAO
 github_username:  0x1A1-1 
 
+google_analytics: UA-92167775-2
+
 # Build settings
 theme: minima
 plugins:
