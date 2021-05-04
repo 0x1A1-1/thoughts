@@ -84,5 +84,5 @@ export const DEFAULT_RETRY = Object.freeze({
 To scale your SIEM in the modern cloud environment with hypergrowth in the organization, relying on SOC operation engineers is no longer an option. **Lambdas and Step Functions** allow you to build once, re-use many times. With extreme flexibility and extensibility, you can adapt to any new cloud resource type while freeing up your security engineering team to more sophisticated tasks and goals. The automation also gives a faster feedback loop in the event of misconfiguration, significantly reducing the detection to remediation time, therefore improving the maturity of your security organization.
 
 ### Where Next?
-Set up customized auto-remediation where AWS Config doesn’t allow you to.
-Additionally, you can create your own pipeline in deploying the everything with Serverless framework
+Set up `customized auto-remediation` where AWS Config doesn’t allow you to.
+Additionally, you can `create your own pipeline` in deploying the everything with Serverless framework
