@@ -109,5 +109,5 @@ StackSets extends the Infrastructure as Code(IaC) capability across multiple acc
 
 You can even have a CloudFormation template of your StackSets configuration: <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html>
 
-Some future ideas I plan to explore are: `Time-based control for IAM with StackSets`, `Tag enforcement in StackSets`
+Some future ideas I plan to explore are: [`Time-based control for IAM`]({{ site.baseurl }}{% post_url 2021-04-19-Time-based-IAM %}){:target="_blank"}, [`Tag enforcement in StackSets`]({{ site.baseurl }}{% post_url 2021-04-21-CF-Tag-Enforcement %})
 

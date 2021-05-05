@@ -5,6 +5,7 @@ name:   Timed-IAM
 date:   2021-04-19 16:22:03 +0100
 categories: AWS
 ---
+
 ## Introduction
 Roles with persistent escalated permissions are considered risky and provide a high-value target for attackers. However, Infrequent elevated privileges are still required for business needs on managing cloud infrastructure. A time-based pattern provides access for the platform and security team while ensuring the security of our cloud infrastructure by limiting the lifespan of escalated permissions. Requests for elevated privilege should be logged for future audit and threat detection. 
 
@@ -105,50 +106,6 @@ class CloudFormation(object):
         )["OperationId"]
         return operation_id
 ```
-
-
-
-<br>
-
-## Enforcing Strict Audit Trail
-
-![Alt text]({{ site.baseurl }}/assets/{{ page.name }}/cloudtrail.png "Cloudtrail")
-
-Oftentimes, we want to leave an audit trail for any time someone escalates their privilege. Note that each CloudFormation action is indeed logged in CloudTrail but under the identity of `AWSCloudFormationStackSetExecutionRole`. As a result, we can enforce some sort of free text field during the creation process(e.g., JIRA ticket) so that the escalation of privilege is recorded in CloudTrail with a trackable reference. Here is a sample of enforcing JIRA ticket ID for the privilege IAM role creation.
-
-``` yaml
-AWSTemplateFormatVersion: 2010-09-09
-Description: This template builds a time-boxed privilege IAM
-Parameters:
-  SourceAccountNumber:
-    Description: Source account number
-    Type: String
-  TicketID:
-    Description: JIRA ticket ID for escalation justification
-    Type: String
-    AllowedPattern: "[a-zA-Z]+-[0-9]+"
-Resources:
-  ElevatedAdmin:
-    Type: 'AWS::IAM::Role'
-    Properties:
-      AssumeRolePolicyDocument:
-        Version: 2012-10-17
-        Statement:
-          - Effect: Allow
-            Principal:
-              AWS:
-                - !Sub 'arn:aws:iam::${SourceAccountNumber}:role/<SOURCE_IAM_ROLE>'
-            Action:
-              - 'sts:AssumeRole'
-      Path: /Admin/
-      RoleName: Timed-Elevated-Admin
-      Policies: [...]
-      Tags:
-        - Key: JIRA_Ticket
-          Value: !Ref TicketID
-
-```
-Once you set this up, you can further monitor escalation by setting up a [CloudWatch rule](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/monitor-cloudtrail-log-files-with-cloudwatch-logs.html) in each trail to monitor the creation of the privileged role and notify the related party accordingly.
 
 <br>
 
@@ -258,4 +215,4 @@ IAM Policy for Operator
 
 
 ## Conclusion
-In this post, we went through using the time condition field for IAM policy, tag enforcement for CloudFormation deployment, protecting IAM role in both identity-based policy and Service Control Policy(SCP). The journey to protect IAM never ends, some additional idea worth exploring include: `timed access for user-based removal of Active Directory group`, `Using Hashicorp Vault to provide short term IAM credentials`
+In this post, we went through using the time condition field for IAM policy, protecting IAM role in both identity-based policy and Service Control Policy(SCP). The journey to protect IAM never ends, some additional idea worth exploring include: [`Tag enforcement for CloudFormation deployment`]({{ site.baseurl }}{% post_url 2021-04-21-CF-Tag-Enforcement %}), `timed access for user-based removal of Active Directory group`, `Using Hashicorp Vault to provide short term IAM credentials`
