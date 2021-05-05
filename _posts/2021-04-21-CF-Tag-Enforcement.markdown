@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tag Enforcement for CloudFormation"
+title:  "Tag Enforcement for CloudFormation Deployment"
 name:   CF-Tag-Enforcement
 date:   2021-04-21 09:34:53 +0100
 categories: AWS
