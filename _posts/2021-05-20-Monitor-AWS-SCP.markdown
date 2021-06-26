@@ -174,11 +174,11 @@ resource "aws_cloudwatch_event_target" "scp-target-payload" {
 
 ## Where to go from here
 
-- Lockdown the Organization Management account. Policies can be applied to the root of an organization but they don’t have any effect on the root account. A good practice would therefore be to provide minimal access to your root account with IAM permissions, using it only to manage the Organization.
+- `Lockdown` the Organization Management account. Policies can be applied to the root of an organization but they don’t have any effect on the root account. A good practice would therefore be to provide `minimal access` to your root account with IAM permissions, using it only to manage the Organization.
 
-- Additionally, you would also want to set up some protection around the CloudWatch rule and SNS topics that we set up. A sophisticated actor could potentially “disabled” the monitoring before performing any action. One rule of thumb is to always keep the defense-in-depth principle in mind. 
+- Additionally, you would also want to set up some protection around the CloudWatch rule and SNS topics that we set up. A sophisticated actor could potentially “disabled” the monitoring before performing any action. One rule of thumb is to always keep the `defense-in-depth principle` in mind. 
 
-- Another approach is to provide time-based auditable IAM access into the root account. For ideas, you can check out my posts on [Time-based control for IAM]({{ site.baseurl }}{% post_url 2021-04-19-Time-based-IAM %}) and [Tag enforcement]({{ site.baseurl }}{% post_url 2021-04-21-CF-Tag-Enforcement %}).
+- Another approach is to provide `time-based auditable IAM access` into the root account. For ideas, you can check out my posts on [Time-based control for IAM]({{ site.baseurl }}{% post_url 2021-04-19-Time-based-IAM %}) and [Tag enforcement]({{ site.baseurl }}{% post_url 2021-04-21-CF-Tag-Enforcement %}).
 
 <br>
 
